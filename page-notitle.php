@@ -7,8 +7,8 @@
 get_header(); ?>
 
 	<?php
-	if(have_posts()) {
-		while(have_posts()) {
+	if (have_posts()) {
+		while (have_posts()) {
       the_post(); ?>
 
 			<h1>This is my Static Title</h1>
