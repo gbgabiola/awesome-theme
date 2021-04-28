@@ -1,5 +1,17 @@
-<?php get_header(); ?>
+<?php
 
-<h1>This is my Awesome Theme</h1>
+get_header();
 
-<?php get_footer(); ?>
+  if(have_posts()) {
+    while(have_posts()) {
+      the_post(); ?>
+      <h3><?php the_title(); ?></h3>
+      <small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?>, in <?php the_category(); ?></small>
+      <p><?php the_content(); ?></p>
+      <hr>
+
+    <?php
+    }
+  }
+
+get_footer(); ?>
