@@ -43,13 +43,14 @@ add_theme_support('post-formats', array(
   'image',
   'video',
 ));
+add_theme_support('html5', array('search-form'));
 
 /*
 	==========================================
 	 Sidebar function
 	==========================================
 */
-function awesome_widget_init() {
+function awesome_widgets_init() {
 
 	register_sidebar(array(
     'name' => 'Sidebar',
@@ -63,4 +64,4 @@ function awesome_widget_init() {
 	));
 }
 
-add_action('widgets_init', 'awesome_widget_init');
+add_action('widgets_init', 'awesome_widgets_init');
