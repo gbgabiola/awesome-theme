@@ -17,6 +17,11 @@
             <?php the_content(); ?>
             <hr>
 
+            <div class="row">
+              <div class="col-xs-6 text-left"><?php previous_post_link(); ?></div>
+              <div class="col-xs-6 text-right"><?php next_post_link(); ?></div>
+            </div>
+
             <?php
             if (comments_open()) {
               comments_template();
@@ -35,7 +40,6 @@
     <div class="col-xs-12 col-sm-4">
       <?php get_sidebar(); ?>
     </div>
-
-  </div>
+  </div> <!-- /.row -->
 
 <?php get_footer(); ?>
