@@ -68,3 +68,14 @@ add_action('widgets_init', 'awesome_widgets_init');
 	==========================================
 */
 require get_template_directory() . '/inc/walker.php';
+
+/*
+	==========================================
+	 Head function
+	==========================================
+*/
+function awesome_remove_version() {
+  return '';
+}
+
+add_filter('the_generator', 'awesome_remove_version');
