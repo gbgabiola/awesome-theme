@@ -1,3 +1,7 @@
+.row {
+  margin-top: 32px;
+}
+
 .carousel {
   background: #000;
 }

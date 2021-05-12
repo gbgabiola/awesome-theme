@@ -14,26 +14,13 @@
               <div class="pull-right"><?php the_post_thumbnail('thumbnail'); ?></div>
             <?php } ?>
             <small>
-              <?php
-              $terms_list = wp_get_post_terms($post->ID, 'field');
-              $i = 0;
-              foreach($terms_list as $term) {
-                $i++;
-                if ($i > 1) { echo ', '; }
-                echo $term->name;
-              }
-              ?>
+              <?php echo awesome_get_terms($post->ID, 'field'); ?>
               ||
               <?php
-              $terms_list = wp_get_post_terms($post->ID, 'software');
-              $i = 0;
-              foreach($terms_list as $term) {
-                $i++;
-                if ($i > 1) { echo ', '; }
-                echo $term->name;
+              echo awesome_get_terms($post->ID, 'software');
+              if (current_user_can('manage_options')) {
+                echo ' || '; edit_post_link();
               }
-              ?>
-              || <?php edit_post_link();
               ?>
             </small>
             <?php the_content(); ?>
